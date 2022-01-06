@@ -1,0 +1,19 @@
+.movieList {
+
+}
+.thead:after {
+    border: 1px solid #0B749B;
+    opacity: 0.6;
+}
+
+.caption {
+    top: 74px;
+    left: 214px;
+    width: 149px;
+    height: 29px;
+    text-align: left;
+    font: normal normal normal 24px/12px Roboto;
+    letter-spacing: 0;
+    color: #386071;
+    opacity: 1;
+}

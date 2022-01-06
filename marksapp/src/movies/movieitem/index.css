@@ -1,0 +1,36 @@
+.movie-item{
+
+}
+
+.item-rank{
+    text-align: center;
+    font: normal normal normal 16px/20px Roboto;
+    letter-spacing: 0;
+    color: #536B7A;
+    opacity: 1;
+}
+.item-title{
+    text-align: left;
+    font: normal normal normal 16px/20px Roboto;
+    letter-spacing: 0;
+    color: #536B7A;
+    opacity: 1;
+}
+.item-year{
+    text-align: center;
+    font: normal normal normal 16px/20px Roboto;
+    letter-spacing: 0;
+    color: #536B7A;
+    opacity: 1;
+}
+.item-revenue{
+    text-align: left;
+    font: normal normal normal 16px/20px Roboto;
+    letter-spacing: 0;
+    color: #536B7A;
+    opacity: 1
+}
+.item-icon{
+    background: transparent 0 0 no-repeat padding-box;
+    opacity: 1;
+}
