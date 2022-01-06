@@ -3,7 +3,10 @@ Frontend Challenge from XpandIT, using React to make **Marks** movie app.
 
 The **app** should have the following visual [aspect](https://xd.adobe.com/view/ea7b4a6b-b5b4-40cf-8d34-fffd1ed91d8c-bf28/specs/).
 
-The **app** requires the following functionalities: ![img.png](img.png)
+The **app** requires the following functionalities:
+
+![img.png](img.png)
+
 These will later on be detailed in this file.
 
 The project runs on **Node.js** [v16.13.1](https://nodejs.org/dist/v16.13.1/node-v16.13.1-x64.msi), scaffolded using the **create-react-app** [module](https://create-react-app.dev/docs/getting-started).
