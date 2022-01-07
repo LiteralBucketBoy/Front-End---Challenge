@@ -4,6 +4,7 @@
   left: 0;
   background: #FFFFFF 0 0 no-repeat padding-box;
   opacity: 1;
+
 }
 
 .App-logo {
@@ -14,13 +15,9 @@
 .App-header {
   background: #012433 0 0 no-repeat padding-box;
   opacity: 1;
-  min-height: 50px;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  height: 50px;
   color: white;
+  position: sticky;
 }
 .App-MovieList{
   border-top: 100px;

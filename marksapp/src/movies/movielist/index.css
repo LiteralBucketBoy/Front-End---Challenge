@@ -1,38 +1,113 @@
-.movietable {
-    overflow-y: scroll;
-    max-height: 250px;
+.movietableDiv {
+    justify-content: center;
+    width: 80%;
     margin-left: 200px;
-    margin-right: 200px;
-
+    margin-bottom: 100px;
+    margin-top: 100px;
+    height: 600px;
+    overflow: auto;
+    overflow-x:hidden;
 }
 
-
+.movietable {
+    width: 100%;
+}
 .tableHead {
+    border:none;
+    background: white;
+    position: sticky;
+    z-index: 99;
+    top:0;
 
+}
+.tableHead:after{
+    content:' ';
+    display:block;
     border: 1px solid #0B749B;
     opacity: 0.6;
+    width: 10000px;
 
 }
+thead tr th  {
+    background: white;
+    position: sticky;
+    z-index: 99;
+    top:0;
+}
+
 
 .tableCaption {
-
+    justify-content: center;
+    width: 80%;
+    position: sticky;
+    margin-left: 200px;
+    margin-top: 24px;
     text-align: left;
-    font: normal normal normal 24px/12px Roboto;
+    font-size:  24px ;
     letter-spacing: 0;
     color: #386071;
     opacity: 1;
 }
 
+
 .tableHeader{
     text-align: center;
-    font: normal normal bold 10px/20px Roboto;
+    font: normal normal bold 15px/20px Roboto;
     letter-spacing: 0;
     color: #0B749B;
     opacity: 1;
+    width: 70px;
+    padding-bottom: 5px;
+    background: white;
+}
+.headerTitle{
+    text-align: left;
+    font: normal normal bold 15px/20px Roboto;
+    letter-spacing: 0;
+    color: #0B749B;
+    opacity: 1;
+    padding-bottom: 5px;
+    background: white;
+}
+.headerYear{
+    text-align: left;
+    font: normal normal bold 15px/20px Roboto;
+    letter-spacing: 0;
+    color: #0B749B;
+    opacity: 1;
+    padding-bottom: 5px;
+    background: white;
+}
+.headerRev{
+    text-align: left;
+    font: normal normal bold 15px/20px Roboto;
+    letter-spacing: 0;
+    color: #0B749B;
+    opacity: 1;
+    padding-bottom: 5px;
+    background: white;
+}
+.headerIcon{
+    text-align: left;
+    font: normal normal bold 15px/20px Roboto;
+    letter-spacing: 0;
+    color: #0B749B;
+    opacity: 1;
+    padding-bottom: 5px;
+    background: white;
+}
+
+
+
+table {
+    border-collapse: collapse;
+    table-layout: fixed;
+
 }
 
 .movie-item{
-
+    border-bottom: 1px solid #9AAEBB;
+    height: 70px;
 }
 
 .item-rank{
@@ -41,6 +116,7 @@
     letter-spacing: 0;
     color: #536B7A;
     opacity: 1;
+
 }
 .item-title{
     text-align: left;
@@ -48,9 +124,10 @@
     letter-spacing: 0;
     color: #536B7A;
     opacity: 1;
+
 }
 .item-year{
-    text-align: center;
+    text-align: left;
     font: normal normal normal 16px/20px Roboto;
     letter-spacing: 0;
     color: #536B7A;
@@ -61,7 +138,7 @@
     font: normal normal normal 16px/20px Roboto;
     letter-spacing: 0;
     color: #536B7A;
-    opacity: 1
+    opacity: 1;
 }
 
 .item-icon{
