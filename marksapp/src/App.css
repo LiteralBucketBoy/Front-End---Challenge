@@ -2,8 +2,6 @@
   text-align: center;
   top: 0;
   left: 0;
-  width: 1366px;
-  height: 768px;
   background: #FFFFFF 0 0 no-repeat padding-box;
   opacity: 1;
 }
@@ -14,12 +12,19 @@
 }
 
 .App-header {
-  background-color: #000000;
+  background: #012433 0 0 no-repeat padding-box;
+  opacity: 1;
   min-height: 50px;
+
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   color: white;
 }
-
+.App-MovieList{
+  border-top: 100px;
+  border-bottom: 100px;
+  margin-left: auto;
+  margin-right: auto;
+}

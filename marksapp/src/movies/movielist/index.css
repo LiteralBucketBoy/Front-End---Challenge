@@ -1,19 +1,70 @@
-.movieList {
+.movietable {
+    overflow-y: scroll;
+    max-height: 250px;
+    margin-left: 200px;
+    margin-right: 200px;
 
 }
-.thead:after {
+
+
+.tableHead {
+
     border: 1px solid #0B749B;
     opacity: 0.6;
+
 }
 
-.caption {
-    top: 74px;
-    left: 214px;
-    width: 149px;
-    height: 29px;
+.tableCaption {
+
     text-align: left;
     font: normal normal normal 24px/12px Roboto;
     letter-spacing: 0;
     color: #386071;
+    opacity: 1;
+}
+
+.tableHeader{
+    text-align: center;
+    font: normal normal bold 10px/20px Roboto;
+    letter-spacing: 0;
+    color: #0B749B;
+    opacity: 1;
+}
+
+.movie-item{
+
+}
+
+.item-rank{
+    text-align: center;
+    font: normal normal normal 16px/20px Roboto;
+    letter-spacing: 0;
+    color: #536B7A;
+    opacity: 1;
+}
+.item-title{
+    text-align: left;
+    font: normal normal normal 16px/20px Roboto;
+    letter-spacing: 0;
+    color: #536B7A;
+    opacity: 1;
+}
+.item-year{
+    text-align: center;
+    font: normal normal normal 16px/20px Roboto;
+    letter-spacing: 0;
+    color: #536B7A;
+    opacity: 1;
+}
+.item-revenue{
+    text-align: left;
+    font: normal normal normal 16px/20px Roboto;
+    letter-spacing: 0;
+    color: #536B7A;
+    opacity: 1
+}
+
+.item-icon{
+    background: transparent 0 0 no-repeat padding-box;
     opacity: 1;
 }

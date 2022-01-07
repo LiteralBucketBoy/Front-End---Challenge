@@ -1,6 +1,6 @@
 import React from "react";
 import lastTrIcon from "./Path 11162.svg"
-import "./index.css"
+
 
 export function MovieItem({movie}) {
     return (
@@ -15,7 +15,7 @@ export function MovieItem({movie}) {
                 {movie.year}
             </td>
             <td className="item-revenue">
-                {movie.revenue ? "$" + movie.revenue : "" }
+                {movie.revenue ? "$" + movie.revenue + "million": "" }
             </td>
             <td className="item-icon">
                 <img src={lastTrIcon} alt={"eye icon"}/>

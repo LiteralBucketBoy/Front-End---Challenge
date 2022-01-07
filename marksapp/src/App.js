@@ -9,7 +9,7 @@ function App() {
       <header className="App-header">
           <MoviesInfo/>
       </header>
-          <MovieList className="movieList"/>
+          <MovieList className="App-MovieList"/>
     </div>
   );
 }
