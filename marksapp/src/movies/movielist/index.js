@@ -3,64 +3,112 @@ import {MovieItem} from "../movieitem";
 import {getLocalStorageMovies, setLocalStorageMovies} from "../api-data/MoviesContext";
 import "./index.css"
 import {MovieModal} from "../movieModal";
-
+import {FilterModal} from "../filtermodal";
+import redo from "./Group 20082.svg"
 
 export function MovieList(){
 
     const [movieList, setMovieList] = React.useState()
     const [list, setList] = React.useState(
-        { items: 10,
-        data: []
-        }
+         []
+
     );
     React.useEffect(  ()=> {async function A(){
         let localData = getLocalStorageMovies();
 
         if(localData!==null){
             setMovieList(getLocalStorageMovies())
-            setList({
-                items: 10,
-                data: localData.content.slice(0, 10)
-            })
+            setList( localData.content.slice(0, 10)
+            )
         }else{
             await setLocalStorageMovies().then(()=>{
                 setMovieList(getLocalStorageMovies())
             }).then(()=>{
-                setList({
-                    items: 10,
-                    data: getLocalStorageMovies().content.slice(0, 10)
-                })})
+                setList(getLocalStorageMovies().content.slice(0, 10)
+                )})
         }
 
         } A().then(()=>{}); }, []);
 
     let dataTable = React.createRef();
-
+    const [loading, setLoading] = React.useState(false)
     let onScroll = () => {
         let table = dataTable.current;
-        setTimeout(()=> {
-            if (table.scrollTop === (table.scrollHeight - table.offsetHeight)) {
-                if (movieList.content.length>=list.items + 10 ) {
-                    setList({
-                        items: list.items + 10,
-                        data: movieList.content.slice(0, list.items + 10),
-                    });
-                }
+            if (table.scrollTop === (table.scrollHeight - table.offsetHeight) && filteredByRev && filteredByYearRev && !loading) {
+                setTimeout(()=>{},200);
+                setLoading(true);
+                if (movieList.content.length>=list.length + 10 ) {
+                    setList( movieList.content.sort((a, b) => a.ranking > b.ranking ? 1 : -1).slice(0, list.length + 10),
+                    );
+                    setTimeout(()=> {setLoading(false)},1000)
             }
-        },1000)
+        }
     };
 
-    /**Modal Handling*/
+    /**Movie Modal Handling*/
     const [selectedMovie, setSelectedMovie] = React.useState();
     const [toggle, setToggle] = React.useState(false);
     async function handleClick(id){
         setSelectedMovie(id)
         setToggle(!toggle);
     }
+    /**Filter Modal Handling*/
+    const [disableBR, setDisableOtherBR] = React.useState(false); //BR - biggest rev
+    const [disableYR, setDisableOtherYR] = React.useState(false); //YR - yearly rev
+    const [selectedYear, setSelectedYear] = React.useState();
+    const [toggleYear, setToggleYear] = React.useState(false);
+    const [filteredByYearRev,setFilteredByYearRev] = React.useState(true);
 
+    const handleYearRevenueClick = (e) =>{
+        e.preventDefault();
+        setDisableOtherBR(!disableBR)
+        setToggleYear(true)
+        let localData = getLocalStorageMovies();
+        if(filteredByYearRev){
+
+        }else{
+            setList(localData.content.sort((a, b) => a.ranking > b.ranking ? 1 : -1).slice(0, 10),
+        );
+            setToggleYear(false)
+            setSelectedYear()
+        }
+        setFilteredByYearRev(!filteredByYearRev);
+    }
+    const [filteredByRev,setFilteredByRev] = React.useState(true);
+    const handleBiggestRevenueClick = (e) =>{
+        e.preventDefault();
+        setDisableOtherYR(!disableYR)
+        let localData = getLocalStorageMovies();
+        if(filteredByRev){
+            setList(localData.content.sort((a, b) => a.revenue < b.revenue ? 1 : -1).slice(0,  10),
+            );
+        }else{
+            setList(localData.content.sort((a, b) => a.ranking > b.ranking ? 1 : -1).slice(0, 10),
+               );
+        }
+        setFilteredByRev(!filteredByRev);
+    }
+
+    const handleRedoYear = (e) => {
+        e.preventDefault();
+        setToggleYear(true)
+
+    }
+    React.useEffect(()=>{
+        let localData = getLocalStorageMovies();
+        if(selectedYear!=null)
+        setList(localData.content.filter((item)=> String(item.year) === selectedYear).sort((a, b) => a.revenue < b.revenue ? 1 : -1).slice(0, 10));
+
+    },[selectedYear])
     return(
         <>  <p className="tableCaption">Movie ranking</p>
             <MovieModal movie={selectedMovie} toggle={toggle} >{}</MovieModal>
+            <div className="filters">
+                <button disabled={disableBR} className={!filteredByRev ? "biggestRevTrue" : "biggestRevFalse"} onClick={handleBiggestRevenueClick}>Top 10 Revenue</button>
+                <button disabled={disableYR} className={!filteredByYearRev ? "yearRevTrue" : "yearRevFalse"} onClick={handleYearRevenueClick}>{selectedYear ? "Top 10 Revenue "+selectedYear :"Top 10 Revenue per Year"}</button>
+                {selectedYear ? <img src={redo} alt={"redo year select"} onClick={handleRedoYear} /> : <></>}
+                <FilterModal setSelectedYear={setSelectedYear} setFilteredByYearRev={setFilteredByYearRev} setToggleYear={setToggleYear} toggle={toggleYear}/>
+            </div>
             <div className="movietableDiv" onScroll={onScroll}>
             <table className="movietable" ref={dataTable} >
             <thead className="tableHead">
@@ -75,7 +123,7 @@ export function MovieList(){
                 <tbody className="tableBody"   >
             {
 
-                list.data.map(
+                list.map(
                     (item, index) => (
                         <MovieItem onClick={()=>handleClick(item.id)}
                             key={item.id}

@@ -1,6 +1,7 @@
 .movietableDiv {
     justify-content: center;
     margin: 100px 100px;
+    margin-top:0px;
     height: 550px;
     overflow-y: scroll;
     overflow-x:hidden;
@@ -14,15 +15,14 @@
 .movietable {
     width: 100%;
 }
-.tableHead {
+thead{
     border:none;
     background: white;
     position: sticky;
     z-index: 99;
     top:0;
-
 }
-.tableHead:after{
+thead:after{
     content:' ';
     display:block;
     border: 1px solid #0B749B;
@@ -30,7 +30,7 @@
     width: 10000px;
 
 }
-thead tr th  {
+ tr th  {
     background: white;
     position: sticky;
     z-index: 99;
@@ -167,4 +167,61 @@ table {
     100% {
         transform: rotate(360deg);
     }
+}
+.filters{
+    display: flex;
+    justify-items: flex-start;
+    margin: 30px 100px;
+}
+
+.biggestRevFalse{
+    background: #FFFFFF 0 0 no-repeat padding-box;
+    border: 1px solid #78849E66;
+    border-radius: 20px;
+    opacity: 1;
+    text-align: center;
+    font: normal normal 300 12px/14px Roboto;
+    letter-spacing: 0;
+    color: #78849E;
+    padding:10px;
+    margin-right: 20px;
+}
+
+.biggestRevTrue{
+    background: #00BAFF 0% 0% no-repeat padding-box;
+    border: 1px solid #78849E66;
+    border-radius: 20px;
+    text-align: center;
+    font: normal normal  12px/14px Roboto;
+    letter-spacing: 0px;
+    color: #012433;
+    opacity: 1;
+    padding:10px;
+    margin-right: 20px;
+}
+
+.yearRevFalse{
+    background: #FFFFFF 0 0 no-repeat padding-box;
+    border: 1px solid #78849E66;
+    border-radius: 20px;
+    opacity: 1;
+    text-align: center;
+    font: normal normal 300 12px/14px Roboto;
+    letter-spacing: 0;
+    color: #78849E;
+    padding:10px;
+    margin-right: 20px;
+}
+
+.yearRevTrue{
+    background: #00BAFF 0% 0% no-repeat padding-box;
+    border: 1px solid #78849E66;
+    border-radius: 20px;
+    text-align: center;
+    font: normal normal  12px/14px Roboto;
+    letter-spacing: 0px;
+    color: #012433;
+    opacity: 1;
+    padding:10px;
+    margin-right: 20px;
 }

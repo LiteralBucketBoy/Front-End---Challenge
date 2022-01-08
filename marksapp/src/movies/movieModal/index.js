@@ -33,9 +33,9 @@ export function MovieModal({movie,toggle}) {
                     <h1 className="modal-title">{movieData ? movieData.title : ""}
                         <div className="closeDiv" onClick={handleClose}>
                             <img src={closeImg} alt={"close X"}/>
-                            <a className="closeBtn" >
+                            <small className="closeBtn" >
                                 Close
-                            </a>
+                            </small>
                         </div>
 
                     </h1>
