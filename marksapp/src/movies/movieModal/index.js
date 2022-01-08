@@ -32,7 +32,7 @@ export function MovieModal({movie,toggle}) {
                 <div className="modal-header">
                     <h1 className="modal-title">{movieData ? movieData.title : ""}
                         <div className="closeDiv" onClick={handleClose}>
-                            <img src={closeImg} alt={"close X"}/>
+                            <img className="closeX" src={closeImg} alt={"close X"}/>
                             <small className="closeBtn" >
                                 Close
                             </small>
@@ -49,7 +49,7 @@ export function MovieModal({movie,toggle}) {
 
                     <div className="body-item">
                     <label>Genre</label>
-                    <p>{movieData ? movieData.genre : ""}</p>
+                    <p>{movieData ? (movieData.genre).split(",").join(', ') : ""}</p>
                     </div>
 
                     <div className="body-item">
@@ -58,13 +58,13 @@ export function MovieModal({movie,toggle}) {
                     </div>
 
                     <div className="body-item2">
-                        <div className='row'>
+                        <div className='row1'>
                             <div className='column'>
                                 <label>Director</label>
                                 <p className="people">{movieData ? movieData.director : ""}</p>
                             </div>
                         </div>
-                        <div className='row'>
+                        <div className='row2'>
                             <div className='column'>
                                 <label>Actors</label>
                                 <p className="people">{movieData ? movieData.actors : ""}</p>
@@ -73,7 +73,7 @@ export function MovieModal({movie,toggle}) {
                       </div>
                     <div className="body-item">
                     <label>Runtime</label>
-                    <p>{movieData ? movieData.runtime : ""}</p>
+                    <p>{movieData ? movieData.runtime+" mins" : ""}</p>
                     </div>
 
                     <div className="body-item">
@@ -88,7 +88,7 @@ export function MovieModal({movie,toggle}) {
 
                     <div className="body-item">
                     <label>Revenue</label>
-                    <p>{movieData ? movieData.revenue : ""}</p>
+                    <p>{movieData ? "$"+movieData.revenue+" millions" : ""}</p>
                     </div>
 
                     <div className="body-item">

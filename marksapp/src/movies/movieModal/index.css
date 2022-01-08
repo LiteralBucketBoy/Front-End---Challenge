@@ -18,6 +18,7 @@
     left:50%;
     transform: translate(-50%,-50%);
     z-index:101;
+
 }
 .modal-header{
     width: 90%;
@@ -62,26 +63,32 @@
     text-align: left;
     font: normal normal normal 10px/16px Roboto;
     letter-spacing: 0.64px;
-    color: #012433;
     opacity: 1;
     position: absolute;
     top: 10px;
     right: 25px;
 }
 
-.closeDiv:hover {
-    color: #000000;
+.closeDiv:hover .closeX{
+    color: #012433;
     filter: brightness(0%);
     opacity: 1;
 }
 
 .modal-body{
-    width: 90%;
+    width: 88%;
     margin-left: 40px;
     margin-top: 32px;
+    margin-right: 50px;
     height:70%;
     overflow-y: scroll;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
 
+}
+.modal-body::-webkit-scrollbar { /* WebKit */
+    width: 0;
+    height: 0;
 }
 .body-item{
     display: grid;
@@ -90,11 +97,19 @@
 .body-item2{
     display: flex;
 }
-.row {
+.row1 {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 15%;
+    margin-right: 0;
+}
+.row2 {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     width: 100%;
+    margin-right: 0;
 }
 .column {
     display: flex;
@@ -112,17 +127,19 @@ label{
 
 p{
     text-align: left;
-    font: normal normal 16px/19px Roboto;
+    font: normal normal bold 16px/24px Roboto;
     letter-spacing: 0;
     color: #78849E;
     opacity: 1;
+
 
 }
 
 .people{
     text-align: left;
-    font: normal normal  16px/19px Roboto;
+    font: normal normal bold 16px/19px Roboto;
     letter-spacing: 0;
     color: #00BAFF;
     opacity: 1;
+    margin-top:0;
 }

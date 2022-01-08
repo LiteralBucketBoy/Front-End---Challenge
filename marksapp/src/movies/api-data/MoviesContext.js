@@ -7,7 +7,7 @@ export let MoviesContext = React.createContext(undefined, undefined);
 
 
 export function  getLocalStorageMovies (){
-    return JSON.parse(localStorage.getItem("movieList") ); /**reconverts the list back to the object*/
+    return JSON.parse(localStorage.getItem("movieList") );
 
 }
 

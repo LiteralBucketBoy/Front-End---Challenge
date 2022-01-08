@@ -2,7 +2,7 @@ import React from "react";
 import "./index.css"
 import {getLocalStorageMovies} from "../api-data/MoviesContext";
 
-export function FilterModal({toggle,setToggleYear,setFilteredByYearRev,setSelectedYear}){
+export function FilterModal({toggle,setDisableOtherBR,setToggleYear,setFilteredByYearRev,setSelectedYear}){
     React.useEffect(()=>{setModalShow(toggle)},[toggle])
     const ref = React.useRef()
     const [modalShow, setModalShow] = React.useState(false);
@@ -12,14 +12,15 @@ export function FilterModal({toggle,setToggleYear,setFilteredByYearRev,setSelect
             if (modalShow && ref.current && !ref.current.contains(e.target)) {
                 setModalShow(false)
                 setToggleYear(false)
-                setFilteredByYearRev(true);
+                setFilteredByYearRev(false);
+
             }
         }
              document.addEventListener("mousedown", checkClickedOut)
             return () => {
             document.removeEventListener("mousedown", checkClickedOut)
              }
-    }, [modalShow,setToggleYear,setFilteredByYearRev])
+    }, [modalShow,setToggleYear,setFilteredByYearRev,setDisableOtherBR])
 
 
     const [uniqueYears,setUniqueYears] = React.useState([]) ;
@@ -50,7 +51,7 @@ export function FilterModal({toggle,setToggleYear,setFilteredByYearRev,setSelect
                <label>Select a year</label>
            </div>
            {
-                   uniqueYears.map((item, i) =>
+                   uniqueYears.map((item) =>
                        <option onClick={handleYearClick} className="modal-year-items" key={item} value={item}>{item}</option>
                    )
            }

@@ -1,8 +1,7 @@
 .movietableDiv {
     justify-content: center;
-    margin: 100px 100px;
-    margin-top:0px;
-    height: 550px;
+    margin: 0 100px 100px;
+    height: 620px;
     overflow-y: scroll;
     overflow-x:hidden;
     scrollbar-width: none; /* Firefox */
@@ -43,7 +42,7 @@ thead:after{
     margin: 24px 100px;
     position: sticky;
     text-align: left;
-    font-size:  24px ;
+    font: normal normal normal 24px/12px Roboto;
     letter-spacing: 0;
     color: #386071;
     opacity: 1;
@@ -188,12 +187,12 @@ table {
 }
 
 .biggestRevTrue{
-    background: #00BAFF 0% 0% no-repeat padding-box;
+    background: #00BAFF 0 0 no-repeat padding-box;
     border: 1px solid #78849E66;
     border-radius: 20px;
     text-align: center;
-    font: normal normal  12px/14px Roboto;
-    letter-spacing: 0px;
+    font: normal normal 300 12px/14px Roboto;
+    letter-spacing: 0;
     color: #012433;
     opacity: 1;
     padding:10px;
@@ -214,12 +213,12 @@ table {
 }
 
 .yearRevTrue{
-    background: #00BAFF 0% 0% no-repeat padding-box;
+    background: #00BAFF 0 0 no-repeat padding-box;
     border: 1px solid #78849E66;
     border-radius: 20px;
     text-align: center;
-    font: normal normal  12px/14px Roboto;
-    letter-spacing: 0px;
+    font: normal normal 300 12px/14px Roboto;
+    letter-spacing: 0;
     color: #012433;
     opacity: 1;
     padding:10px;
