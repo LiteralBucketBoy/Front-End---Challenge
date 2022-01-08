@@ -12,22 +12,117 @@
 .modal-main {
     position:fixed;
     background: #ffffff;
-    width: 50%;
-    height: 100%;
+    width: 80%;
+    height: 80%;
     top:50%;
     left:50%;
     transform: translate(-50%,-50%);
-    overflow-y:scroll;
     z-index:101;
 }
 .modal-header{
-    display: inline-block;
+    width: 90%;
+    margin-left: 40px;
+    margin-top: 32px;
  }
 
 .modal-title{
-    text-align: center;
+    text-align: left;
     font: normal normal 300 32px/38px Roboto;
     letter-spacing: 0;
     color: #164E78;
+    opacity: 1;
+
+}
+.modal-header:after{
+    content:' ';
+    display:block;
+    border: 1px solid #21B3CF;
+    opacity: 1;
+    width: 52px;
+    height:0;
+}
+
+.closeBtn{
+    text-align: left;
+    font: normal normal normal 10px/16px Roboto;
+    letter-spacing: 0.64px;
+    color: #718FA2;
+    opacity: 1;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.closeDiv{
+    float:right;
+    position: relative;
+}
+
+.closeDiv:hover .closeBtn{
+    text-align: left;
+    font: normal normal normal 10px/16px Roboto;
+    letter-spacing: 0.64px;
+    color: #012433;
+    opacity: 1;
+    position: absolute;
+    top: 10px;
+    right: 25px;
+}
+
+.closeDiv:hover {
+    color: #000000;
+    filter: brightness(0%);
+    opacity: 1;
+}
+
+.modal-body{
+    width: 90%;
+    margin-left: 40px;
+    margin-top: 32px;
+    height:70%;
+    overflow-y: scroll;
+
+}
+.body-item{
+    display: grid;
+    grid-template-rows: 0;
+}
+.body-item2{
+    display: flex;
+}
+.row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+}
+.column {
+    display: flex;
+    flex-direction: column;
+
+}
+
+label{
+    text-align: left;
+    font: normal normal normal 14px/17px Roboto;
+    letter-spacing: 0;
+    color: #78849EB9;
+    opacity: 1;
+}
+
+p{
+    text-align: left;
+    font: normal normal 16px/19px Roboto;
+    letter-spacing: 0;
+    color: #78849E;
+    opacity: 1;
+
+}
+
+.people{
+    text-align: left;
+    font: normal normal  16px/19px Roboto;
+    letter-spacing: 0;
+    color: #00BAFF;
     opacity: 1;
 }

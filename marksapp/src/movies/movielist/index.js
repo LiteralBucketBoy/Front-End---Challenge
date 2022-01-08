@@ -59,16 +59,16 @@ export function MovieList(){
     }
 
     return(
-        <>  <p className="tableCaption">Movie Ranking</p>
+        <>  <p className="tableCaption">Movie ranking</p>
             <MovieModal movie={selectedMovie} toggle={toggle} >{}</MovieModal>
             <div className="movietableDiv" onScroll={onScroll}>
             <table className="movietable" ref={dataTable} >
             <thead className="tableHead">
             <tr className="tableHeadRow">
-                <th className="tableHeader">Ranking</th>
-                <th className="headerTitle">Title</th>
-                <th className="headerYear">Year</th>
-                <th className="headerRev">Revenue</th>
+                <th className="tableHeader">RANKING</th>
+                <th className="headerTitle">TITLE</th>
+                <th className="headerYear">YEAR</th>
+                <th className="headerRev">REVENUE</th>
                 <th className="tableIcon"><br>{ }</br></th>
             </tr>
             </thead>
@@ -86,6 +86,9 @@ export function MovieList(){
             }
             </tbody>
         </table>
+                <div className="loader-wrapper">
+                    <div className="loader">{}</div>
+                </div>
             </div>
 
         </>

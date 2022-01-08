@@ -30,12 +30,71 @@ export function MovieModal({movie,toggle}) {
         <div  id="modal"  className="modal" style={{ display: modalShow ? "block" : "none" }}>
             <section className="modal-main">
                 <div className="modal-header">
-                    <h1 className="modal-title">{movieData ? movieData.title : ""}</h1>
-                    <button className="closeBtn" type="button" onClick={handleClose}><img src={closeImg} alt={"close X"}/>
-                        Close
-                    </button>
+                    <h1 className="modal-title">{movieData ? movieData.title : ""}
+                        <div className="closeDiv" onClick={handleClose}>
+                            <img src={closeImg} alt={"close X"}/>
+                            <a className="closeBtn" >
+                                Close
+                            </a>
+                        </div>
+
+                    </h1>
+
                 </div>
                 <div className="modal-body">
+                    <div className="body-item">
+                        <label>Year</label>
+                        <p>{movieData ? movieData.year : ""}</p>
+                    </div>
+
+                    <div className="body-item">
+                    <label>Genre</label>
+                    <p>{movieData ? movieData.genre : ""}</p>
+                    </div>
+
+                    <div className="body-item">
+                    <label>Description</label>
+                    <p>{movieData ? movieData.description : ""}</p>
+                    </div>
+
+                    <div className="body-item2">
+                        <div className='row'>
+                            <div className='column'>
+                                <label>Director</label>
+                                <p className="people">{movieData ? movieData.director : ""}</p>
+                            </div>
+                        </div>
+                        <div className='row'>
+                            <div className='column'>
+                                <label>Actors</label>
+                                <p className="people">{movieData ? movieData.actors : ""}</p>
+                            </div>
+                        </div>
+                      </div>
+                    <div className="body-item">
+                    <label>Runtime</label>
+                    <p>{movieData ? movieData.runtime : ""}</p>
+                    </div>
+
+                    <div className="body-item">
+                    <label>Rating</label>
+                    <p>{movieData ? movieData.rating : ""}</p>
+                    </div>
+
+                    <div className="body-item">
+                    <label>Votes</label>
+                    <p>{movieData ? movieData.votes : ""}</p>
+                    </div>
+
+                    <div className="body-item">
+                    <label>Revenue</label>
+                    <p>{movieData ? movieData.revenue : ""}</p>
+                    </div>
+
+                    <div className="body-item">
+                    <label>Metascore</label>
+                    <p>{movieData ? movieData.metascore : ""}</p>
+                    </div>
 
                 </div>
             </section>
