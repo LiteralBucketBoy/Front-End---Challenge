@@ -42,6 +42,7 @@ export function FilterModal({toggle,setToggleYear,setFilteredByYearRev,setSelect
         setModalShow(false)
         setToggleYear(false)
     }
+
     return (
        <div  id="modal-year"  className="modal-year"  style={{ display: modalShow ? "block" : "none" }}>
         <section ref={ref} className="modal-year-main">
