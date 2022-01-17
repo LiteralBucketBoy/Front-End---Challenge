@@ -1,5 +1,5 @@
-# XpandIT-Challenge
-Frontend Challenge from XpandIT, using React to make **Marks** movie app. 
+# Front End - Challenge
+Frontend Challenge, using React to make a very simple movie app. 
 
 The **app** should have the following visual [aspect](https://xd.adobe.com/view/ea7b4a6b-b5b4-40cf-8d34-fffd1ed91d8c-bf28/specs/).
 
